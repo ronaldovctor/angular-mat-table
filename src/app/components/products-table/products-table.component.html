@@ -1,0 +1,26 @@
+<div fxLayout="row" fxLayoutAlign="space-around stretch">
+    <table fxFlex mat-table [dataSource]="products">
+        <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef>Code</th>
+            <td mat-cell *matCellDef="let product">{{product.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let product">{{product.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let product">{{product.price}}</td>
+        </ng-container>
+        <ng-container matColumnDef="dept">
+            <th mat-header-cell *matHeaderCellDef>Department</th>
+            <td mat-cell *matCellDef="let product">{{product.department.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let product">{{product.description}}</td>
+        </ng-container>
+        <tr mat-header-row  *matHeaderRowDef="prodColumns"></tr>
+        <tr mat-row *matRowDef="let row, columns: prodColumns"></tr>
+    </table>
+</div>
